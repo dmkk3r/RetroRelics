@@ -44,7 +44,7 @@ dotnet build
 dotnet run
 ```
 
-### Usage
+## Usage
 
 1. Sign up or log in to your RetroRelics account.
 2. Start adding your retro video game collection.
