@@ -7,14 +7,8 @@
 
 <div class="w-screen h-screen flex flex-col bg-stone-950">
 	<Navbar />
-	<div class="flex flex-row h-full">
-		<div class="flex h-full">
-
-			<Sidebar />
-		</div>
-		<div class="flex flex-grow">
-			<slot />
-		</div>
+	<div class="flex flex-row h-full p-4">
+		<slot />
 	</div>
 	<Footer />
 </div>
