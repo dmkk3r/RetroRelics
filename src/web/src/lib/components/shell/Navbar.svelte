@@ -13,7 +13,7 @@
 		<div class="flex flex-grow items-center justify-center">
 			<input
 				class="flex h-10 w-2/5 items-center justify-center rounded-sm
-             border-none bg-stone-800 px-3 pr-12 text-white focus:border-none focus:outline-none focus:ring-1 focus:ring-stone-700"
+             border-none bg-stone-800 px-3 pr-12 text-white placeholder:text-white focus:border-none focus:outline-none focus:ring-1 focus:ring-stone-700"
 				placeholder="Search..."
 			/>
 		</div>
