@@ -1,21 +1,23 @@
 # RetroRelics
 
 RetroRelics is a web application for collecting and managing retro video game collections, with a primary focus on scanning ebay for price informations.
-## Features
 
+## Features
 - Easily manage your retro video game collection
 - Automatically fetch pricing information from eBay
 - User-friendly interface for collectors
 
-## Stack
+## Disclaimer
+- ⚠️ The project is under very active development
+- ⚠️ Expect bugs and breaking changes
 
+## Stack
 - Frontend: SvelteKit with Tailwind CSS
 - Backend: .NET 7
 
 ## Installation
 
 ### Frontend (SvelteKit)
-
 ```shell
 # Clone the repository
 git clone https://github.com/dmkk3r/RetroRelics.git
@@ -31,7 +33,6 @@ npm run dev
 ```
 
 ### Backend (.NET)
-
 ```shell
 # Clone the repository
 git clone https://github.com/dmkk3r/RetroRelics.git
@@ -45,7 +46,6 @@ dotnet run
 ```
 
 ## Usage
-
 1. Sign up or log in to your RetroRelics account.
 2. Start adding your retro video game collection.
 3. For pricing information, simply enter the game title, and RetroRelics will fetch the latest eBay prices.
