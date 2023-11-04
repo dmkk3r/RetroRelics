@@ -1,0 +1,47 @@
+version: '3.9'
+
+volumes:
+  postgres_data:
+
+networks:
+  retrorelics-internal:
+    driver: bridge
+
+services:
+  playwright-chrome:
+    container_name: playwright-chrome
+    hostname: playwright-chrome
+    image: browserless/chrome
+    restart: unless-stopped
+    environment:
+        - SCREEN_WIDTH=1920
+        - SCREEN_HEIGHT=1024
+        - SCREEN_DEPTH=16
+        - ENABLE_DEBUGGER=false
+        - PREBOOT_CHROME=true
+        - CONNECTION_TIMEOUT=300000
+        - MAX_CONCURRENT_SESSIONS=10
+        - CHROME_REFRESH_TIME=600000
+        - DEFAULT_BLOCK_ADS=true
+        - DEFAULT_STEALTH=true
+        - DEFAULT_IGNORE_HTTPS_ERRORS=true
+
+  postgres:
+    container_name: retrorelics-db
+    image: postgres:latest
+    ports:
+      - 8001:5432
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: "retrorelics"
+      POSTGRES_PASSWORD: "retrorelics"
+      POSTGRES_DB: "retrorelics"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - retrorelics-internal
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U retrorelics -d retrorelics" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
