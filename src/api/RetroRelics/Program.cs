@@ -1,4 +1,5 @@
 using FastEndpoints;
+using RetroRelics.Postgres;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +13,8 @@ var logger = new LoggerConfiguration()
     .CreateLogger();
 
 builder.Logging.AddSerilog(logger);
+
+builder.Services.AddDbContextFactory<RetroRelicsContext>();
 
 var app = builder.Build();
 

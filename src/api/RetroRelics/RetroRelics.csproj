@@ -18,4 +18,8 @@
       <Folder Include="Features\Collection\" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\RetroRelics.Postgres\RetroRelics.Postgres.csproj" />
+    </ItemGroup>
+
 </Project>
