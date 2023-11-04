@@ -1,4 +1,5 @@
 using FastEndpoints;
+using Microsoft.EntityFrameworkCore;
 using RetroRelics.Postgres;
 using Serilog;
 
@@ -14,7 +15,9 @@ var logger = new LoggerConfiguration()
 
 builder.Logging.AddSerilog(logger);
 
-builder.Services.AddDbContextFactory<RetroRelicsContext>();
+builder.Services.AddDbContextFactory<RetroRelicsContext>(options => {
+    options.UseNpgsql(builder.Configuration.GetConnectionString("retrorelics"));
+});
 
 var app = builder.Build();
 

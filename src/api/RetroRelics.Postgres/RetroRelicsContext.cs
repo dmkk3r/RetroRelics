@@ -1,16 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using RetroRelics.Postgres.Entities;
 
 namespace RetroRelics.Postgres;
 
 public class RetroRelicsContext : DbContext {
-    private readonly IConfiguration _configuration;
+    public RetroRelicsContext(DbContextOptions<RetroRelicsContext> options) : base(options) { }
 
-    public RetroRelicsContext(IConfiguration configuration) {
-        _configuration = configuration;
-    }
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
-        optionsBuilder.UseNpgsql(_configuration.GetConnectionString("retrorelics"));
-    }
+    public DbSet<Relic> Relics { get; set; }
+    public DbSet<RelicMetadata> RelicMetadata { get; set; }
 }
