@@ -45,6 +45,9 @@ dotnet build
 dotnet run
 ```
 
+### Docker
+Use the included docker-compose.yml in the project root as an example.
+
 ## Usage
 1. Sign up or log in to your RetroRelics account.
 2. Start adding your retro video game collection.
