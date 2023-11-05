@@ -1,11 +1,19 @@
 using FastEndpoints;
+using FastEndpoints.Swagger;
 using Microsoft.EntityFrameworkCore;
 using RetroRelics.Postgres;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddFastEndpoints();
+builder.Services
+    .AddFastEndpoints()
+    .SwaggerDocument(o => {
+        o.DocumentSettings = s => {
+            s.Title = "RetroRelics API";
+            s.Version = "v1";
+        };
+    });
 
 builder.Logging.ClearProviders();
 
@@ -21,6 +29,7 @@ builder.Services.AddDbContextFactory<RetroRelicsContext>(options => {
 
 var app = builder.Build();
 
-app.UseFastEndpoints();
+app.UseFastEndpoints()
+    .UseSwaggerGen();
 
 app.Run();
