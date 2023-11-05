@@ -12,7 +12,7 @@ using RetroRelics.Postgres;
 namespace RetroRelics.Postgres.Migrations
 {
     [DbContext(typeof(RetroRelicsContext))]
-    [Migration("20231104214039_Initial")]
+    [Migration("20231105142718_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
