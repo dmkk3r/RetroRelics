@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetroRelics", "RetroRelics\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetroRelics.Postgres", "RetroRelics.Postgres\RetroRelics.Postgres.csproj", "{50AC4E4D-6EC5-4B46-9C66-D5B757B5D01F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetroRelics.Playwright", "RetroRelics.Playwright\RetroRelics.Playwright.csproj", "{13E2E84A-1763-4E44-8E7D-534FE6F0C098}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{50AC4E4D-6EC5-4B46-9C66-D5B757B5D01F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50AC4E4D-6EC5-4B46-9C66-D5B757B5D01F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50AC4E4D-6EC5-4B46-9C66-D5B757B5D01F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13E2E84A-1763-4E44-8E7D-534FE6F0C098}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13E2E84A-1763-4E44-8E7D-534FE6F0C098}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13E2E84A-1763-4E44-8E7D-534FE6F0C098}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13E2E84A-1763-4E44-8E7D-534FE6F0C098}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
