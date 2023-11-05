@@ -1,6 +1,7 @@
 using FastEndpoints;
 using Microsoft.EntityFrameworkCore;
 using RetroRelics.Postgres;
+using RetroRelics.Postgres.Entities;
 
 namespace RetroRelics.Features.Relics;
 
@@ -24,7 +25,13 @@ public class GetRelic : Endpoint<GetRelicRequest> {
             .Include(r => r.Metadata)
             .FirstOrDefaultAsync(r => r.Id == req.Id, ct);
 
+        if (relic == null) {
+            await SendNotFoundAsync(ct);
+            return;
+        }
+        
         await SendAsync(new GetRelicResponse {
+            Relic = relic
         }, cancellation: ct);
     }
 }
@@ -34,4 +41,5 @@ public class GetRelicRequest {
 }
 
 public class GetRelicResponse {
+    public Relic Relic { get; set; }
 }

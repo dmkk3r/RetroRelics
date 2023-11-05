@@ -12,7 +12,7 @@ using RetroRelics.Postgres;
 namespace RetroRelics.Postgres.Migrations
 {
     [DbContext(typeof(RetroRelicsContext))]
-    [Migration("20231105142718_Initial")]
+    [Migration("20231105203550_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -66,13 +66,11 @@ namespace RetroRelics.Postgres.Migrations
 
             modelBuilder.Entity("RetroRelics.Postgres.Entities.RelicMetadata", b =>
                 {
-                    b.HasOne("RetroRelics.Postgres.Entities.Relic", "Relic")
+                    b.HasOne("RetroRelics.Postgres.Entities.Relic", null)
                         .WithMany("Metadata")
                         .HasForeignKey("RelicId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Relic");
                 });
 
             modelBuilder.Entity("RetroRelics.Postgres.Entities.Relic", b =>

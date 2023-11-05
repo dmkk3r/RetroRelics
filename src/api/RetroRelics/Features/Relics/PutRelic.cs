@@ -15,14 +15,10 @@ public class PutRelic : Endpoint<PutRelicRequest> {
     }
 
     public override async Task HandleAsync(PutRelicRequest req, CancellationToken ct) {
-        await SendAsync(new PutRelicResponse {
-        }, cancellation: ct);
+        await SendOkAsync(ct);
     }
 }
 
 public class PutRelicRequest {
     public int Id { get; set; }
-}
-
-public class PutRelicResponse {
 }
