@@ -23,19 +23,20 @@
 			</button>
 		</div>
 	</div>
-	<div class="flex flex-grow flex-row items-center space-x-12 pl-6">
+	<div class="flex flex-grow flex-row items-center space-x-12 px-6">
 		<a href="/" class="flex flex-row items-center space-x-2">
 			<Home color="#ffffff" size="18" />
 			<p class="text-sm text-white">Home</p>
-		</a>
-		<a href="/collections" class="flex flex-row items-center space-x-2">
-			<LibraryBig color="#ffffff" size="18" />
-			<p class="text-sm text-white">Collections</p>
 		</a>
 		<a href="/relics" class="flex flex-row items-center space-x-2">
 			<Book color="#ffffff" size="18" />
 			<p class="text-sm text-white">Relics</p>
 		</a>
+		<a href="/collections" class="flex flex-row items-center space-x-2">
+			<LibraryBig color="#ffffff" size="18" />
+			<p class="text-sm text-white">Collections</p>
+		</a>
+		<span class="flex flex-grow" />
 		<a href="/settings" class="flex flex-row items-center space-x-2">
 			<Settings color="#ffffff" size="18" />
 			<p class="text-sm text-white">Settings</p>
