@@ -1,10 +1,33 @@
 using FastEndpoints;
 using FastEndpoints.Swagger;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.EntityFrameworkCore;
 using RetroRelics.Postgres;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+
+const string retroReclisOrigin = "retroReclis";
+builder.Services.AddCors(opt => {
+    opt.AddPolicy(name: retroReclisOrigin, policyBuilder => {
+        policyBuilder.WithOrigins("http://localhost:5173")
+            .AllowCredentials()
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+
+builder.Services.Configure<ForwardedHeadersOptions>(options => {
+    options.ForwardedHeaders =
+        ForwardedHeaders.XForwardedFor |
+        ForwardedHeaders.XForwardedHost |
+        ForwardedHeaders.XForwardedProto;
+
+    options.ForwardLimit = 2;
+    options.KnownNetworks.Clear();
+    options.KnownProxies.Clear();
+});
+
 
 builder.Services
     .AddFastEndpoints()
@@ -28,6 +51,9 @@ builder.Services.AddDbContextFactory<RetroRelicsContext>(options => {
 });
 
 var app = builder.Build();
+
+app.UseForwardedHeaders();
+app.UseCors(retroReclisOrigin);
 
 app.UseFastEndpoints()
     .UseSwaggerGen();
