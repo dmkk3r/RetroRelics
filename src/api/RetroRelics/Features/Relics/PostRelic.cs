@@ -27,11 +27,11 @@ public class PostRelic : Endpoint<PostRelicRequest> {
             Name = req.Name,
             Metadata = new List<RelicMetadata> {
                 new() {
-                    Key = "Description",
+                    Key = RelicMetadataType.Description,
                     Value = req.Description
                 },
                 new() {
-                    Key = "ImageUrl",
+                    Key = RelicMetadataType.ImageUrl,
                     Value = req.ImageUrl
                 }
             }
