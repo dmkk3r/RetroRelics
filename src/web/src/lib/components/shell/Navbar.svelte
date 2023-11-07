@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Book, Home, LibraryBig, LogOut, Settings } from 'lucide-svelte';
+	import { Book, Combine, Home, LibraryBig, LogOut, Settings } from 'lucide-svelte';
 </script>
 
 <div class="flex h-28 flex-col bg-stone-900 font-mono">
@@ -37,6 +37,10 @@
 			<p class="text-sm text-white">Collections</p>
 		</a>
 		<span class="flex flex-grow" />
+		<a href="/scraper" class="flex flex-row items-center space-x-2">
+			<Combine color="#ffffff" size="18" />
+			<p class="text-sm text-white">Scraper</p>
+		</a>
 		<a href="/settings" class="flex flex-row items-center space-x-2">
 			<Settings color="#ffffff" size="18" />
 			<p class="text-sm text-white">Settings</p>

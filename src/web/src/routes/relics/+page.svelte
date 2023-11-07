@@ -4,10 +4,13 @@
 	export let data: PageData;
 </script>
 
-{#if data.relics.error}
-	<div>There was an error: {data.relics.error}</div>
-{:else if data.relics.data}
-	<pre><code class="text-white">{JSON.stringify(data.relics.data, undefined, 2)}</code></pre>
-{:else}
-	<div>Loading...</div>
-{/if}
+<div class="">
+	<h1 class="text-white">Relics</h1>
+	{#if data.relics.error}
+		<div class="text-white">There was an error: {data.relics.error}</div>
+	{:else if data.relics.data}
+		<pre><code class="text-white">{JSON.stringify(data.relics.data, undefined, 2)}</code></pre>
+	{:else}
+		<div class="text-white">Loading...</div>
+	{/if}
+</div>

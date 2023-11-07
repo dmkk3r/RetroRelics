@@ -5,9 +5,9 @@
 	import '../app.css';
 </script>
 
-<div class="w-screen h-screen flex flex-col bg-stone-950">
+<div class="flex h-screen w-screen flex-col bg-stone-950">
 	<Navbar />
-	<div class="flex flex-row h-full p-4">
+	<div class="flex h-full flex-row overflow-auto p-4">
 		<slot />
 	</div>
 	<Footer />

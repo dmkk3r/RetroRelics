@@ -21,10 +21,11 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Features\Collection\" />
+      <Folder Include="Features\Collections\" />
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\RetroRelics.Playwright\RetroRelics.Playwright.csproj" />
       <ProjectReference Include="..\RetroRelics.Postgres\RetroRelics.Postgres.csproj" />
     </ItemGroup>
 
